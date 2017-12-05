@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/Jus/Documents/Summer-2014/CS-410/MP1_CS410'
+let g:netrw_dirhist_2='/Users/Jus/Documents/github_code/PolyC/backendCrawler'
+let g:netrw_dirhist_3='/Users/Jus/.ssh'
+let g:netrw_dirhist_4='/Users/Jus/Documents/github_code/verdi/lib'
+let g:netrw_dirhist_5='/Users/Jus/.vim'
+let g:netrw_dirhist_6='/Users/Jus/Desktop'
