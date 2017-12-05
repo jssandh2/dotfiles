@@ -1,0 +1,200 @@
+ all                1.0           installed             Edit all lines matching a given regexp
+  cmake-mode         20160928.505  installed             major-mode for editing CMake sources
+  company-coq        20170615.1842 installed             A collection of extensions for Proof General's Coq mode
+  company-irony      20170905.1346 installed             company-mode completion back-end for irony-mode
+  dracula-theme      20170412.845  installed             Dracula Theme
+  elscreen           20160613.251  installed             Emacs window session manager
+  emacsql-mysql      20170410.1008 installed             EmacSQL back-end for MySQL
+  emoji-cheat-she... 20150617.631  installed             emoji-cheat-sheet for emacs
+  emoji-display      20140117.213  installed             emoji displaying module
+  emoji-recall       20160723.1508 installed             How many emoji can you recall from memory?
+  enh-ruby-mode      20170417.2356 installed             Major mode for editing Ruby files
+  ensime             20170703.505  installed             ENhanced Scala Interaction Mode for Emacs
+  fancy-battery      20150101.404  installed             Fancy battery display
+  flylisp            0.2           installed             Color unbalanced parentheses and parentheses inconsistent with indentation
+  format-sql         20150422.633  installed             Use format-sql to make your SQL readable in directly Emacs.
+  geiser             20170704.1044 installed             GNU Emacs and Scheme talk to each other
+  gh                 20170512.2049 installed             A GitHub library for Emacs
+  gh-md              20151207.940  installed             Render markdown using the Github api
+  ghc                20170613.1212 installed             Sub mode for Haskell mode
+  ghci-completion    20151125.457  installed             Completion for GHCi commands in inferior-haskell buffers
+  git                20140128.241  installed             An Elisp API for programmatically using Git
+  git-auto-commit... 20161229.817  installed             Emacs Minor mode to automatically commit and push
+  git-command        20160111.503  installed             Yet another Git interface
+  git-commit         20170609.2310 installed             Edit Git commit messages
+  github-theme       20170630.1501 installed             The GitHub color theme for Emacs.
+  gmail-message-mode 20160627.1147 installed             A major-mode for editing gmail messages using markdown syntax.
+  go-add-tags        20161123.427  installed             Add field tags for struct fields
+  go-mode            20170308.1512 installed             Major mode for the Go programming language
+  google-maps        20161210.458  installed             Access Google Maps from Emacs
+  govet              20150428.1159 installed             linter/problem finder for the Go source code
+  highlight          20170702.732  installed             Highlighting commands.
+  import-js          20161220.508  installed             Import Javascript dependencies
+  intero             20170708.2124 installed             Complete development mode for Haskell
+  jedi               20160425.2156 installed             a Python auto-completion for Emacs
+  js-auto-beautify   20161030.2209 installed             auto format you js/jsx file
+  json-navigator     20170606.34   installed             View and navigate JSON structures
+  json-reformat      20160212.53   installed             Reformatting tool for JSON
+  json-snatcher      20150511.2047 installed             Grabs the path to JSON values in a JSON file
+  lex                1.1           installed             Lexical analyser construction
+  lispxmp            20170110.1508 installed             Automagic emacs lisp code annotation
+  log4j-mode         20160108.1118 installed             major mode for viewing log files
+  macro-math         20130328.904  installed             in-buffer mathematical operations
+  magic-latex-buffer 20170530.1705 installed             Magically enhance LaTeX-mode font-locking for semi-WYSIWYG editing
+  malinka            20170628.151  installed             A C/C++ project configuration package for Emacs
+  mark-tools         20130614.325  installed             Some simple tools to access the mark-ring in Emacs
+  markdown-mode      20170707.1030 installed             Major mode for Markdown-formatted text
+  markdown-previe... 20160111.702  installed             Realtime preview by eww
+  math-symbol-lists  20170221.553  installed             Lists of Unicode math symbols and latex commands
+  math-symbols       20151121.1642 installed             Math Symbol Input methods and conversion tools
+  maude-mode         20160222.807  installed             Emacs mode for the programming language Maude
+  mips-mode          20170310.2149 installed             Major-mode for MIPS assembly
+  monochrome-theme   20140326.350  installed             A dark Emacs 24 theme for your focused hacking sessions
+  org-jekyll         20130508.239  installed             Export jekyll-ready posts form org-mode entries
+  package+           20150319.1455 installed             Extensions for the package library.
+  peg                20150707.2341 installed             Parsing Expression Grammars in Emacs Lisp
+  pretty-mode        20160614.1146 installed             Redisplay parts of the buffer as pretty Unicode symbols.
+  racket-mode        20170617.1942 installed             Major mode for Racket language.
+  redis              20150531.1248 installed             Redis integration
+  rust-mode          20170606.457  installed             A major emacs mode for editing Rust source code
+  rvm                20150402.742  installed             Emacs integration for rvm
+  skype              20160711.124  installed             skype UI for emacs users..
+  slack              20170708.2054 installed             Slack client for Emacs
+  slime              20170705.643  installed             Superior Lisp Interaction Mode for Emacs
+  sml-mode           6.7           installed             Major mode for editing (Standard) ML
+  ssh                20120904.1342 installed             Support for remote logins using ssh.
+  sublimity          20161214.2032 installed             smooth-scrolling, minimap and distraction-free mode
+  weather-metno      20150831.1807 installed             Weather data from met.no in Emacs
+  web                20141231.1201 installed             useful HTTP client
+  alert              20170503.1714 dependency            Growl-style notification system for Emacs
+  async              20170610.2241 dependency            Asynchronous processing in Emacs
+  auto-complete      20170124.1845 dependency            Auto Completion for GNU Emacs
+  circe              20170528.731  dependency            Client for IRC in Emacs
+  company            20170617.1502 dependency            Modular text completion framework
+  company-math       20170804.1202 dependency            Completion backends for unicode math symbols and latex tags
+  concurrent         20161228.1930 dependency            Concurrent utility functions for emacs lisp
+  ctable             20140304.1659 dependency            Table component for Emacs Lisp
+  dash               20170613.151  dependency            A modern list library for Emacs
+  deferred           20170531.2135 dependency            Simple asynchronous functions for emacs lisp
+  emacsql            20170410.1218 dependency            high-level SQL database front-end
+  emojify            20170619.2237 dependency            Display emojis in Emacs
+  epc                20140609.2234 dependency            A RPC stack for the Emacs Lisp
+  epl                20150517.433  dependency            Emacs Package Library
+  f                  20170404.1039 dependency            Modern API for working with files and directories
+  faceup             20170126.1305 dependency            Regression test system for font-lock
+  finalize           20170418.1245 dependency            finalizers for Emacs Lisp
+  flycheck           20170707.920  dependency            On-the-fly syntax checking
+  gntp               20141024.1950 dependency            Growl Notification Protocol for Emacs
+  grizzl             20160818.37   dependency            Fast fuzzy search index for Emacs.
+  ham-mode           20150811.606  dependency            Html As Markdown. Transparently edit an html file using markdown
+  haskell-mode       20170704.1445 dependency            A Haskell editing mode
+  helm               20170708.1207 dependency            Helm is an Emacs incremental and narrowing framework
+  helm-core          20170701.629  dependency            Development files for Helm
+  hierarchy          20170706.552  dependency            Library to create and display hierarchy structures
+  ht                 20161015.1945 dependency            The missing hash table library for Emacs
+  html-to-markdown   20151105.40   dependency            HTML to Markdown converter written in Emacs-lisp.
+  irony              20170920.1417 dependency            C/C++ minor mode powered by libclang
+  jedi-core          20170121.610  dependency            Common code of jedi.el and company-jedi.el
+  log4e              20170401.604  dependency            provide logging framework for elisp
+  logito             20120225.1255 dependency            logging library for Emacs
+  macrostep          20161120.1306 dependency            interactive macro expander
+  marshal            20160807.1954 dependency            eieio extension for automatic (un)marshalling
+  oauth2             0.11          dependency            OAuth 2.0 Authorization Protocol
+  org                20170703      dependency            Outline-based notes management and organizer
+  pcache             20170105.1414 dependency            persistent caching for Emacs.
+  pkg-info           20150517.443  dependency            Information about packages
+  popup              20160709.729  dependency            Visual Popup User Interface
+  projectile         20170416.148  dependency            Manage and navigate projects in Emacs easily
+  python-environment 20150310.153  dependency            virtualenv API for Emacs Lisp
+  request            20170131.1747 dependency            Compatible layer for URL request in Emacs
+  rtags              20170705.144  dependency            A front-end for rtags
+  s                  20170428.1026 dependency            The long lost Emacs string manipulation library.
+  sbt-mode           20170708.1211 dependency            Interactive support for sbt projects
+  scala-mode         20170611.806  dependency            Major mode for editing Scala
+  term-run           20151228.105  dependency            Run arbitrary command in terminal buffer
+  web-beautify       20161115.1447 dependency            Format HTML, CSS and JavaScript/JSON
+  web-mode           20170613.959  dependency            major mode for editing web templates
+  websocket          20170610.2117 dependency            Emacs WebSocket client and server
+  with-editor        20170707.1401 dependency            Use the Emacsclient as $EDITOR
+  yasnippet          20170624.803  dependency            Yet another snippet extension for Emacs.
+  allout             2.3           built-in              extensive outline mode for use alone and with other modes
+  allout-widgets     1.0           built-in              Visually highlight allout outline structure.
+  ansi-color         3.4.2         built-in              translate ANSI escape sequences into faces
+  antlr-mode         2.2.3         built-in              major mode for ANTLR grammar files
+  artist             1.2.6         built-in              draw ascii graphics with your mouse
+  bs                 1.17          built-in              menu for selecting and displaying buffers
+  cedet              2.0           built-in              Setup CEDET environment
+  cfengine           1.4           built-in              mode for editing Cfengine files
+  chart              0.2           built-in              Draw charts (bar charts, etc)
+  checkdoc           0.6.2         built-in              check documentation strings for style requirements
+  cl-generic         1.0           built-in              CLOS-style generic functions for Elisp
+  cl-lib             1.0           built-in              Common Lisp extensions for Emacs
+  cwarn              1.3.1         built-in              highlight suspicious C and C++ constructions
+  delim-col          2.1           built-in              prettify all columns in a region or rectangle
+  dunnet             2.2           built-in              text adventure for Emacs
+  ebnf2ps            4.4           built-in              translate an EBNF to a syntactic chart on PostScript
+  ede                1.2           built-in              Emacs Development Environment gloss
+  ediff              2.81.4        built-in              a comprehensive visual interface to diff & patch
+  edmacro            2.1           built-in              keyboard macro editor
+  eieio              1.4           built-in              Enhanced Implementation of Emacs Interpreted Objects
+  eieio-core         1.4           built-in              Core implementation for eieio
+  epg                1.0.0         built-in              the EasyPG Library
+  erc                5.3           built-in              An Emacs Internet Relay Chat client
+  eshell             2.4.2         built-in              the Emacs command shell
+  feedmail           11            built-in              assist other email packages to massage outgoing messages
+  find-cmd           0.6           built-in              Build a valid find(1) command with sexps
+  finder             1.0           built-in              topic & keyword-based code finder
+  flymake            0.3           built-in              a universal on-the-fly syntax checker
+  foldout            1.10          built-in              folding extensions for outline-mode and outline-minor-mode
+  footnote           0.19          built-in              footnote support for message mode
+  gamegrid           1.2           built-in              library for implementing grid-based games on Emacs
+  gnus               5.13          built-in              a newsreader for GNU Emacs
+  hippie-exp         1.6           built-in              expand text trying various ways to find its expansion
+  htmlfontify        0.21          built-in              htmlize a buffer/source tree with optional hyperlinks
+  icalendar          0.19          built-in              iCalendar implementation
+  idlwave            6.1.22        built-in              IDL editing mode for GNU Emacs
+  image-dired        0.4.11        built-in              use dired to browse and manipulate your images
+  info-xref          3             built-in              check external references in an Info document
+  inversion          1.3           built-in              When you need something in version XX.XX
+  isearchb           1.5           built-in              a marriage between iswitchb and isearch
+  js                 9             built-in              Major mode for editing JavaScript
+  json               1.4           built-in              JavaScript Object Notation parser / generator
+  let-alist          1.0.4         built-in              Easily let-bind values of an assoc-list by their names
+  linum              0.9.24        built-in              display line numbers in the left margin
+  map                1.0           built-in              Map manipulation functions
+  master             1.0.2         built-in              make a buffer the master over another buffer
+  md4                1.0           built-in              MD4 Message Digest Algorithm.
+  meta-mode          1.0           built-in              major mode for editing Metafont or MetaPost sources
+  mh-e               8.6           built-in              GNU Emacs interface to the MH mail system
+  mixal-mode         0.1           built-in              Major mode for the mix asm language.
+  ntlm               2.0.0         built-in              NTLM (NT LanManager) authentication support
+  package            1.1.0         built-in              Simple package system for Emacs
+  pinentry           0.1           built-in              GnuPG Pinentry server implementation
+  printing           6.9.3         built-in              printing utilities
+  ps-mode            1.1.9         built-in              PostScript mode for GNU Emacs
+  ps-print           7.3.5         built-in              print text from the buffer as PostScript
+  pulse              1.0           built-in              Pulsing Overlays
+  python             0.25.1        built-in              Python's flying circus support for Emacs
+  regi               1.8           built-in              REGular expression Interpreting engine
+  remember           2.0           built-in              a mode for quickly jotting down things to remember
+  repeat             0.51          built-in              convenient way to repeat the previous command
+  ruby-mode          1.2           built-in              Major mode for editing Ruby files
+  ruler-mode         1.6           built-in              display a ruler in the header line
+  savehist           24            built-in              Save minibuffer history
+  semantic           2.2           built-in              Semantic buffer evaluator.
+  seq                2.3           built-in              Sequence manipulation functions
+  sh-script          2.0.6         built-in              shell-script editing commands for Emacs
+  soap-client        3.0.2         built-in              Access SOAP web services
+  sql                3.5           built-in              specialized comint.el for SQL interpreters
+  srecode            1.2           built-in              Semantic buffer evaluator.
+  tabulated-list     1.0           built-in              generic major mode for tabulated lists
+  tetris             2.1           built-in              implementation of Tetris for Emacs
+  thunk              1.0           built-in              Lazy form evaluation
+  tildify            4.6.1         built-in              adding hard spaces into texts
+  timeclock          2.6.1         built-in              mode for keeping track of how much you work
+  tramp              2.2.13.25.1   built-in              Transparent Remote Access, Multiple Protocol
+  vera-mode          2.28          built-in              major mode for editing Vera files
+  viper              3.14.1        built-in              A full-featured Vi emulator for Emacs and XEmacs,
+  wdired             2.0           built-in              Rename files editing their names in dired buffers
+  whitespace         13.2.2        built-in              minor mode to visualize TAB, (HARD) SPACE, NEWLINE
+  woman              0.551         built-in              browse UN*X manual pages `wo (without) man'
