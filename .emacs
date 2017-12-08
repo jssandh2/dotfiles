@@ -1,25 +1,43 @@
-
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
 (package-initialize)
 
-(setenv "PATH" (concat "/usr/local/smlnj/bin:" (getenv "PATH")))
-(setq exec-path (cons "/usr/local/smlnj/bin"  exec-path))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ansi-color-faces-vector
-   [default default default italic underline success warning error])
  '(ansi-color-names-vector
-   ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
- '(custom-enabled-themes (quote (manoj-dark)))
+   ["#212526" "#ff4b4b" "#b4fa70" "#fce94f" "#729fcf" "#e090d7" "#8cc4ff" "#eeeeec"])
+ '(custom-enabled-themes (quote (spacemacs-dark)))
+ '(custom-safe-themes
+   (quote
+    ("ff7625ad8aa2615eae96d6b4469fcc7d3d20b2e1ebc63b761a349bebbb9d23cb" "e3fc83cdb5f9db0d0df205f5da89af76feda8c56d79a653a5d092c82c7447e02" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
+ '(default-input-method "TeX")
+ '(ensime-sem-high-faces
+   (quote
+    ((var :foreground "#000000" :underline
+	  (:style wave :color "yellow"))
+     (val :foreground "#000000")
+     (varField :foreground "#600e7a" :slant italic)
+     (valField :foreground "#600e7a" :slant italic)
+     (functionCall :foreground "#000000" :slant italic)
+     (implicitConversion :underline
+			 (:color "#c0c0c0"))
+     (implicitParams :underline
+		     (:color "#c0c0c0"))
+     (operator :foreground "#000080")
+     (param :foreground "#000000")
+     (class :foreground "#20999d")
+     (trait :foreground "#20999d" :slant italic)
+     (object :foreground "#5974ab" :slant italic)
+     (package :foreground "#000000")
+     (deprecated :strike-through "#000000"))))
  '(package-selected-packages
    (quote
-    (pretty-mode company-coq company-irony cmake-mode web weather-metno sublimity ssh slime slack skype rvm rust-mode peg package+ org-jekyll monochrome-theme mips-mode maude-mode math-symbols mark-tools malinka magic-latex-buffer macro-math log4j-mode lispxmp json-reformat json-navigator json-snatcher js-auto-beautify jedi intero import-js highlight govet google-maps go-add-tags go-mode gmail-message-mode github-theme ghci-completion ghc gh-md gh geiser git git-auto-commit-mode git-command git-commit format-sql fancy-battery ensime enh-ruby-mode emoji-display emoji-cheat-sheet-plus emoji-recall emacsql-mysql elscreen dracula-theme flylisp racket-mode redis all markdown-preview-eww markdown-mode math-symbol-lists lex ## sml-mode))))
+    (jedi-direx jedi racer auto-complete-c-headers popwin popup-complete spacemacs-theme intellij-theme idris-mode intero ssh rvm markdown-mode flycheck-pycheckers flycheck-liquidhs flycheck github-theme go-mode pretty-mode log4j-mode mips-mode monochrome-theme json-navigator json-reformat maude-mode highlight ghc enh-ruby-mode dracula-theme cmake-mode auto-complete-auctex exec-path-from-shell company-ghci ghci-completion ## racket-mode company-jedi company-irony company-irony-c-headers company-c-headers sml-mode rust-mode python-mode python-django python-environment company-coq))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -27,46 +45,72 @@
  ;; If there is more than one, they won't work right.
  )
 
-;; Enable LaTeX (Math) Mode
-(add-hook 'LaTeX-mode-hook 'LateX-math-mode)
+;; MELPA Packages
+(when (>= emacs-major-version 24)
+  (require 'package)
+  (add-to-list
+   'package-archives
+   ;; '("melpa" . "http://stable.melpa.org/packages/") ; many packages won't show if using stable
+   '("melpa" . "http://melpa.milkbox.net/packages/")
+   t))
 
-;; LISP support
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-
-;; Proof-General (Front-End : Coq, Agda)
-(load "~/.emacs.d/lisp/PG/generic/proof-site")
-
-;; Company-Coq --> Make Coq Great Again!
+;; Coq - Proof General
+;; Open .v files with Proof-General's coq-mode      
+(require 'proof-site "~/.emacs.d/lisp/PG/generic/proof-site")
 ;; Load company-coq when opening Coq files
 (add-hook 'coq-mode-hook #'company-coq-mode)
 
-;; Add Lisp directory
-(load "~/.emacs.d/lisp/PG/quack.el")
+;; Company Mode Backends 
+(require 'company-irony-c-headers)
+;; Load with `irony-mode` as a grouped backend
+(eval-after-load 'company
+   '(add-to-list
+     'company-backends '(company-irony-c-headers company-irony company-jedi company-c-headers)))
 
-;; For Haskell
+;; GHCI - Haskell completion
 (add-hook 'inferior-haskell-mode-hook 'turn-on-ghci-completion)
 
-;; For GO (linting)
-;; (add-to-list 'load-path "PATH CONTAINING govet.el" t)
-;; (require 'govet)
+;; Python
+(add-to-list 'load-path "~/.emacs.d/plugins")
+(require 'python)
 
-;; Macs
-(require 'macro-math)
-(global-set-key "\C-x~" 'macro-math-eval-and-round-region)
-(global-set-key "\C-x=" 'macro-math-eval-region)
+;; TeX Mode -> Default
+(add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
 
-;; LaTeX highlighting
-(require 'magic-latex-buffer)
-(add-hook 'latex-mode-hook 'magic-latex-buffer)
+;; Exec Path Shell
+(when (memq window-system '(mac ns))
+(exec-path-from-shell-initialize))
 
-;; For cmake mode
-(setq load-path (cons (expand-file-name "/dir/with/cmake-mode") load-path))
+
+;; Configure eldoc mode
+(add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
+(add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
+(add-hook 'ielm-mode-hook 'turn-on-eldoc-mode)
+
+;; Standard Jedi.el setting
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)
+
+;; c-make mode
+(setq load-path (cons (expand-file-name "~/.emacs.d/elpa/cmake-mode-20160928.505/cmake-mode") load-path))
 (require 'cmake-mode)
 
-;; For C++ stuff (irony)
-(eval-after-load 'company
-  '(add-to-list 'company-backends 'company-irony))
+;; enh-ruby-mode
+(add-to-list 'load-path "~/.emacs.d/elpa/enh-ruby-mode-20171101.1638//Enhanced-Ruby-Mode") ; must be added after any path containing old ruby-mode
+;; (setq enh-ruby-program "(path-to-ruby1.9)/bin/ruby") - so that still works if ruby points to ruby1.8
+
+;; TAB autocompletion
+(setq tab-always-indent 'complete)
+
+;;log4j-mode
+(autoload 'log4j-mode "log4j-mode" "Major mode for viewing log files." t)
+(add-to-list 'auto-mode-alist '("\\.log\\'" . log4j-mode))
+
+;; Fly-Check (Syntax) + Fly-Check (Python)
+(add-hook 'after-init-hook #'global-flycheck-mode)
+;; (global-flycheck-mode 1)
+;; (with-eval-after-load 'flycheck
+;;   (add-hook 'flycheck-mode-hook #'flycheck-pycheckers-setup))
 
 ;; For 'pretty-mode'
 (require 'pretty-mode)
@@ -141,81 +185,21 @@
              ))
   (dolist (char-regexp alist)
     (set-char-table-range composition-function-table (car char-regexp)
-                          `([,(cdr char-regexp) 0 font-shape-gstring]))))
+			  `([,(cdr char-regexp) 0 font-shape-gstring]))))
 
-;; Configure eldoc mode
-(add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
-(add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
-(add-hook 'ielm-mode-hook 'turn-on-eldoc-mode)
+;; Pop-up to fit in window
+(require 'popwin)
+(popwin-mode 1)
 
-;; Code to get el-get + all package installers for el-get
-(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+;; Auto-complete backed -> C/C++
+(global-auto-complete-mode t)
+(require 'auto-complete-c-headers)
+(add-to-list 'ac-sources 'ac-source-c-headers)
 
-(unless (require 'el-get nil t)
-  (url-retrieve
-   "https://github.com/dimitri/el-get/raw/master/el-get-install.el"
-   (lambda (s)
-     (end-of-buffer)
-     (eval-print-last-sexp))))
+;; Rust Mode -> racer-rust
+(add-hook 'rust-mode-hook #'racer-mode)
+(add-hook 'racer-mode-hook #'company-mode)
 
-;; now either el-get is `require'd already, or have been `load'ed by the
-;; el-get installer.
-
-;; set local recipes, el-get-sources should only accept PLIST element
-(setq
- el-get-sources
- '((:name buffer-move                   ; have to add your own keys
-          :after (progn
-                   (global-set-key (kbd "<C-S-up>")     'buf-move-up)
-                   (global-set-key (kbd "<C-S-down>")   'buf-move-down)
-                   (global-set-key (kbd "<C-S-left>")   'buf-move-left)
-                   (global-set-key (kbd "<C-S-right>")  'buf-move-right)))
-
-   (:name smex                          ; a better (ido like) M-x
-          :after (progn
-                   (setq smex-save-file "~/.emacs.d/.smex-items")
-                   (global-set-key (kbd "M-x") 'smex)
-                   (global-set-key (kbd "M-X") 'smex-major-mode-commands)))
-
-   (:name magit                         ; git meet emacs, and a binding
-          :after (progn
-                   (global-set-key (kbd "C-x C-z") 'magit-status)))
-
-   (:name goto-last-change              ; move pointer back to last change
-          :after (progn
-                   ;; when using AZERTY keyboard, consider C-x C-_
-                   (global-set-key (kbd "C-x C-/") 'goto-last-change)))))
-
-;; now set our own packages
-(setq
- my:el-get-packages
- '(el-get                               ; el-get is self-hosting
-   escreen                              ; screen for emacs, C-\ C-h
-   php-mode-improved                    ; if you're into php...
-   switch-window                        ; takes over C-x o
-   auto-complete                        ; complete as you type with overlays
-   zencoding-mode                       ; http://www.emacswiki.org/emacs/ZenCoding
-   color-theme                          ; nice looking emacs
-   color-theme-tango))                  ; check out color-theme-solarized
-
-(setq my:el-get-packages
-      (append my:el-get-packages
-              (mapcar #'el-get-source-name el-get-sources)))
-
-;; install new packages and init already installed packages
-(el-get 'sync my:el-get-packages)
-
-;; Standard Jedi.el setting
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:complete-on-dot t)
-
-;; Skype
-;;(require 'skype)
-;;(setq skype--my-user-handle "juspreet.sandhu3")
-
-;; For 'Sublime's' features of smooth scrolling
-;;(require 'sublimity)
-;;(require 'sublimity-scroll)
-
-;;(require 'sublimity-map)
-;;(sublimity-global-mode)
+(require 'rust-mode)
+(define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common)
+(setq company-tooltip-align-annotations t)
